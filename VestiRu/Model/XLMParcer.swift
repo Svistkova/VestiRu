@@ -14,23 +14,9 @@ struct RSSItem {
     var title: String
     var fullText: String
     var pubDate: String
-//    var photo:
-    
-//    init (title: String, pubDate: String) {
-//        self.title = title
-//        self.pubDate = pubDate
-//    }
-//
-//    init (title: String, pubDate: String, fullText: String) {
-//        self.title = title
-//        self.pubDate = pubDate
-//        self.fullText = fullText
-//    }
-}
+    var img: String
 
-// download xml from a server
-//parse xml to foundation objects
-// call back
+}
 
 class FeedParser: NSObject, XMLParserDelegate {
     private var rssItems : [RSSItem] = []
@@ -40,6 +26,7 @@ class FeedParser: NSObject, XMLParserDelegate {
             currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
+    private var currentImg = ""
     private var currentFullText = ""
     private var currentPubDate = "" {
         didSet{
@@ -77,6 +64,10 @@ class FeedParser: NSObject, XMLParserDelegate {
             currentTitle = ""
             currentFullText = ""
             currentPubDate = ""
+        } else if currentElement == "enclosure" {
+            if let urlString = attributeDict["url"] {
+                currentImg = urlString
+            }
         }
     }
     
@@ -92,8 +83,7 @@ class FeedParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
-            let rssItem = RSSItem(title: currentTitle, fullText: currentFullText, pubDate: currentPubDate)
-//            let rssItem = RSSItem(title: currentTitle, pubDate: currentPubDate)
+            let rssItem = RSSItem(title: currentTitle, fullText: currentFullText, pubDate: currentPubDate, img: currentImg)
             self.rssItems.append(rssItem)
         }
     }
@@ -108,3 +98,4 @@ class FeedParser: NSObject, XMLParserDelegate {
         print(parseError.localizedDescription)
     }
 }
+

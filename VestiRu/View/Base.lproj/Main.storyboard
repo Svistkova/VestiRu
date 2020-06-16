@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aGX-TB-7ln">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -27,13 +27,13 @@
                                             <rect key="frame" x="16" y="16" width="351" height="93"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-Tx-DWY">
-                                                    <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="70.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="103.5" height="70.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.85442529970000003" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ1-u4-Ot3">
-                                                    <rect key="frame" x="0.0" y="78.666666666666671" width="31" height="14.333333333333329"/>
+                                                    <rect key="frame" x="0.0" y="78.5" width="31" height="14.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -62,6 +62,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Vesti.Ru" id="QtT-uB-PFU"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="to5-b6-0rU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="pageRefreshControl:" destination="hVg-8U-i2p" eventType="valueChanged" id="usR-NP-1bH"/>
@@ -83,20 +84,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amL-EE-X40">
-                                <rect key="frame" x="0.0" y="88" width="414" height="414"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amL-EE-X40">
+                                <rect key="frame" x="0.0" y="88" width="414" height="247"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="amL-EE-X40" secondAttribute="height" multiplier="1:1" id="YLA-8M-tSR"/>
+                                    <constraint firstAttribute="height" constant="247" id="3eW-co-RoG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-GG-tAp">
-                                <rect key="frame" x="20" y="511.99999999999994" width="374" height="25.333333333333314"/>
+                                <rect key="frame" x="20" y="345" width="374" height="25.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="weC-lT-NJt">
-                                <rect key="frame" x="20" y="547.33333333333337" width="374" height="314.66666666666663"/>
+                                <rect key="frame" x="20" y="380.5" width="364" height="481.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -106,16 +107,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8fn-41-R7z" firstAttribute="trailing" secondItem="Pug-GG-tAp" secondAttribute="trailing" constant="20" id="6ik-zx-rOy"/>
-                            <constraint firstItem="Pug-GG-tAp" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" constant="20" id="Abb-WX-KlE"/>
-                            <constraint firstItem="8fn-41-R7z" firstAttribute="trailing" secondItem="weC-lT-NJt" secondAttribute="trailing" constant="20" id="SSE-1g-clE"/>
-                            <constraint firstItem="Pug-GG-tAp" firstAttribute="top" secondItem="amL-EE-X40" secondAttribute="bottom" constant="10" id="YSD-vD-wh5"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="trailing" secondItem="8fn-41-R7z" secondAttribute="trailing" id="bHc-A6-uYB"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="top" secondItem="8fn-41-R7z" secondAttribute="top" id="cRa-9x-3an"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" id="opW-UA-8ZO"/>
-                            <constraint firstItem="weC-lT-NJt" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" constant="20" id="teW-uW-h0F"/>
-                            <constraint firstItem="weC-lT-NJt" firstAttribute="bottom" secondItem="8fn-41-R7z" secondAttribute="bottom" id="wEw-yr-6IQ"/>
-                            <constraint firstItem="weC-lT-NJt" firstAttribute="top" secondItem="Pug-GG-tAp" secondAttribute="bottom" constant="10" id="wFX-uf-AGC"/>
+                            <constraint firstItem="weC-lT-NJt" firstAttribute="bottom" secondItem="8fn-41-R7z" secondAttribute="bottom" id="0Py-Er-PSS"/>
+                            <constraint firstItem="Pug-GG-tAp" firstAttribute="top" secondItem="amL-EE-X40" secondAttribute="bottom" constant="10" id="56p-nb-IUK"/>
+                            <constraint firstItem="amL-EE-X40" firstAttribute="centerX" secondItem="JJ7-gI-2fS" secondAttribute="centerX" id="ALP-7f-she"/>
+                            <constraint firstItem="amL-EE-X40" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" id="M3M-1a-3IQ"/>
+                            <constraint firstItem="weC-lT-NJt" firstAttribute="top" secondItem="Pug-GG-tAp" secondAttribute="bottom" constant="10" id="NDS-f2-gcB"/>
+                            <constraint firstItem="Pug-GG-tAp" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" constant="20" id="R4Q-WS-yJW"/>
+                            <constraint firstItem="weC-lT-NJt" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" constant="20" id="byF-7u-RSu"/>
+                            <constraint firstItem="8fn-41-R7z" firstAttribute="trailing" secondItem="weC-lT-NJt" secondAttribute="trailing" constant="30" id="gve-oD-Je6"/>
+                            <constraint firstItem="amL-EE-X40" firstAttribute="top" secondItem="8fn-41-R7z" secondAttribute="top" id="htF-JE-sDI"/>
+                            <constraint firstItem="amL-EE-X40" firstAttribute="trailing" secondItem="8fn-41-R7z" secondAttribute="trailing" id="q9M-Dh-hfS"/>
+                            <constraint firstItem="8fn-41-R7z" firstAttribute="trailing" secondItem="Pug-GG-tAp" secondAttribute="trailing" constant="20" id="uc2-nH-I5d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8fn-41-R7z"/>
                     </view>

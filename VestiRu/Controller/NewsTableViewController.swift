@@ -12,6 +12,7 @@ class NewsTableViewController: UITableViewController {
     
     private var rssItems: [RSSItem]?
 
+
     @IBAction func pageRefreshControl(_ sender: UIRefreshControl) {
         fetchData()
         refreshControl?.endRefreshing()
@@ -32,7 +33,6 @@ class NewsTableViewController: UITableViewController {
             self.rssItems = rssItems
             
             DispatchQueue.main.async {
-//                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
                 self.tableView.reloadData()
             }
         }
@@ -74,8 +74,5 @@ class NewsTableViewController: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
-
-
-
 }
 
