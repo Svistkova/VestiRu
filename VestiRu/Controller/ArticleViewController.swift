@@ -14,15 +14,14 @@ class ArticleViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var articleLabel: UILabel!
+    @IBOutlet weak var articleText: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        articleLabel.lineBreakMode = .byWordWrapping
         titleLabel.text = article.title
-        articleLabel.text = article.fullText
+        articleText.text = article.fullText
     }
     
 

@@ -12,9 +12,15 @@ class NewsTableViewController: UITableViewController {
     
     private var rssItems: [RSSItem]?
 
+    @IBAction func pageRefreshControl(_ sender: UIRefreshControl) {
+        fetchData()
+        refreshControl?.endRefreshing()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableView.automaticDimension
         fetchData()
@@ -26,7 +32,8 @@ class NewsTableViewController: UITableViewController {
             self.rssItems = rssItems
             
             DispatchQueue.main.async {
-                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+//                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+                self.tableView.reloadData()
             }
         }
     }
