@@ -11,7 +11,6 @@ import UIKit
 class NewsTableViewController: UITableViewController {
     
     private var rssItems: [RSSItem]?
-    private var filteredItems = [RSSItem]()
     
     @IBOutlet weak var searchBar: UISearchBar!
     
