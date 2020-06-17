@@ -16,6 +16,7 @@ class NewsTableViewController: UITableViewController {
     @IBAction func pageRefreshControl(_ sender: UIRefreshControl) {
         fetchData()
         refreshControl?.endRefreshing()
+        self.tableView.reloadData()
     }
     
     
@@ -24,6 +25,8 @@ class NewsTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableView.automaticDimension
+//        self.tableView.dataSource = self
+//        self.tableView.delegate = self
         fetchData()
     }
     
@@ -45,16 +48,14 @@ class NewsTableViewController: UITableViewController {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rssItems = rssItems else {
             return 0
         }
         return rssItems.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
         if let item = rssItems?[indexPath.item] {
             cell.item = item
@@ -68,7 +69,6 @@ class NewsTableViewController: UITableViewController {
     }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let indexPath = tableView.indexPathForSelectedRow {
             (segue.destination as? ArticleViewController)?.article = rssItems![indexPath.row]
             tableView.deselectRow(at: indexPath, animated: true)

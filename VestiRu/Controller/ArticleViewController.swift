@@ -23,6 +23,8 @@ class ArticleViewController: UIViewController {
 
         titleLabel.text = article.title
         articleText.text = article.fullText
+
+        
         DispatchQueue.main.async {
             if let url = URL(string: self.article.img) {
                 if let data = try? Data(contentsOf: url){

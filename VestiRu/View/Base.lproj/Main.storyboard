@@ -84,40 +84,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amL-EE-X40">
-                                <rect key="frame" x="0.0" y="88" width="414" height="247"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-PC-Cn9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-HS-HHr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="588"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="amL-EE-X40">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="247"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="amL-EE-X40" secondAttribute="height" multiplier="414:247" id="guU-f1-3r9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-GG-tAp">
+                                                <rect key="frame" x="20" y="257" width="374" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="weC-lT-NJt">
+                                                <rect key="frame" x="20" y="292.5" width="374" height="295.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="amL-EE-X40" firstAttribute="top" secondItem="DOB-HS-HHr" secondAttribute="top" id="8Z3-mQ-Ubu"/>
+                                            <constraint firstAttribute="bottom" secondItem="weC-lT-NJt" secondAttribute="bottom" id="8zj-kb-DB5"/>
+                                            <constraint firstItem="weC-lT-NJt" firstAttribute="leading" secondItem="DOB-HS-HHr" secondAttribute="leading" constant="20" id="Cx2-yV-db2"/>
+                                            <constraint firstItem="weC-lT-NJt" firstAttribute="top" secondItem="Pug-GG-tAp" secondAttribute="bottom" constant="10" id="Ntc-BV-Sjq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pug-GG-tAp" secondAttribute="trailing" constant="20" id="TSX-rD-iTK"/>
+                                            <constraint firstItem="amL-EE-X40" firstAttribute="leading" secondItem="DOB-HS-HHr" secondAttribute="leading" id="Trq-nR-kaJ"/>
+                                            <constraint firstItem="Pug-GG-tAp" firstAttribute="leading" secondItem="DOB-HS-HHr" secondAttribute="leading" constant="20" id="V8G-2t-YNp"/>
+                                            <constraint firstItem="Pug-GG-tAp" firstAttribute="top" secondItem="amL-EE-X40" secondAttribute="bottom" constant="10" id="cBd-yj-5X9"/>
+                                            <constraint firstAttribute="trailing" secondItem="amL-EE-X40" secondAttribute="trailing" id="ocN-Zp-x75"/>
+                                            <constraint firstAttribute="trailing" secondItem="weC-lT-NJt" secondAttribute="trailing" constant="20" id="sg3-yA-Tbe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="247" id="3eW-co-RoG"/>
+                                    <constraint firstAttribute="bottom" secondItem="DOB-HS-HHr" secondAttribute="bottom" id="3l9-ow-YHr"/>
+                                    <constraint firstAttribute="trailing" secondItem="DOB-HS-HHr" secondAttribute="trailing" id="QSr-K0-1O4"/>
+                                    <constraint firstItem="DOB-HS-HHr" firstAttribute="width" secondItem="aKs-PC-Cn9" secondAttribute="width" id="g7f-79-1t4"/>
+                                    <constraint firstItem="DOB-HS-HHr" firstAttribute="leading" secondItem="aKs-PC-Cn9" secondAttribute="leading" id="pUk-y2-cCr"/>
+                                    <constraint firstItem="DOB-HS-HHr" firstAttribute="top" secondItem="aKs-PC-Cn9" secondAttribute="top" id="voH-V4-KmS"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pug-GG-tAp">
-                                <rect key="frame" x="20" y="345" width="374" height="25.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="weC-lT-NJt">
-                                <rect key="frame" x="20" y="380.5" width="364" height="481.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1eh-WE-84C"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="TgJ-Pp-FBS"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="weC-lT-NJt" firstAttribute="bottom" secondItem="8fn-41-R7z" secondAttribute="bottom" id="0Py-Er-PSS"/>
-                            <constraint firstItem="Pug-GG-tAp" firstAttribute="top" secondItem="amL-EE-X40" secondAttribute="bottom" constant="10" id="56p-nb-IUK"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="centerX" secondItem="JJ7-gI-2fS" secondAttribute="centerX" id="ALP-7f-she"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" id="M3M-1a-3IQ"/>
-                            <constraint firstItem="weC-lT-NJt" firstAttribute="top" secondItem="Pug-GG-tAp" secondAttribute="bottom" constant="10" id="NDS-f2-gcB"/>
-                            <constraint firstItem="Pug-GG-tAp" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" constant="20" id="R4Q-WS-yJW"/>
-                            <constraint firstItem="weC-lT-NJt" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" constant="20" id="byF-7u-RSu"/>
-                            <constraint firstItem="8fn-41-R7z" firstAttribute="trailing" secondItem="weC-lT-NJt" secondAttribute="trailing" constant="30" id="gve-oD-Je6"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="top" secondItem="8fn-41-R7z" secondAttribute="top" id="htF-JE-sDI"/>
-                            <constraint firstItem="amL-EE-X40" firstAttribute="trailing" secondItem="8fn-41-R7z" secondAttribute="trailing" id="q9M-Dh-hfS"/>
-                            <constraint firstItem="8fn-41-R7z" firstAttribute="trailing" secondItem="Pug-GG-tAp" secondAttribute="trailing" constant="20" id="uc2-nH-I5d"/>
+                            <constraint firstItem="aKs-PC-Cn9" firstAttribute="top" secondItem="8fn-41-R7z" secondAttribute="top" id="Az9-XJ-LCi"/>
+                            <constraint firstItem="aKs-PC-Cn9" firstAttribute="bottom" secondItem="8fn-41-R7z" secondAttribute="bottom" id="R1p-g8-oN5"/>
+                            <constraint firstItem="aKs-PC-Cn9" firstAttribute="leading" secondItem="8fn-41-R7z" secondAttribute="leading" id="SBw-aw-ZDq"/>
+                            <constraint firstItem="aKs-PC-Cn9" firstAttribute="trailing" secondItem="8fn-41-R7z" secondAttribute="trailing" id="mx3-0c-UXC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8fn-41-R7z"/>
                     </view>

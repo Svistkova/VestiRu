@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 struct RSSItem {
     var title: String
     var fullText: String
@@ -23,11 +21,15 @@ class FeedParser: NSObject, XMLParserDelegate {
     private var currentElement = ""
     private var currentTitle = "" {
         didSet {
-            currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.newlines)
         }
     }
     private var currentImg = ""
-    private var currentFullText = ""
+    private var currentFullText = "" {
+        didSet {
+            currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
     private var currentPubDate = "" {
         didSet{
             currentPubDate = currentPubDate.trimmingCharacters(in: CharacterSet.newlines)
