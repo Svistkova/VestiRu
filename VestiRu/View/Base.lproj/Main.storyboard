@@ -15,9 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="FNc-w2-ODr">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="hVg-8U-i2p" id="C0e-I4-Mx8"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="125" id="Lfx-F8-dLC" customClass="NewsTableViewCell" customModule="VestiRu" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="125"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lfx-F8-dLC" id="N8R-M4-YXI">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="125"/>
@@ -69,6 +77,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
+                        <outlet property="searchBar" destination="FNc-w2-ODr" id="14d-KH-nKC"/>
                         <segue destination="25A-pz-2gg" kind="show" identifier="goToArticle" id="bLf-Bi-uNM"/>
                     </connections>
                 </tableViewController>

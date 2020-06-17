@@ -34,10 +34,5 @@ class ArticleViewController: UIViewController {
                 self.imageView.image = UIImage(named: "vestiLogo")
             }
         }
-        
     }
-    
-
-
-
 }

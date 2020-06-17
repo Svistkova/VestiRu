@@ -8,11 +8,14 @@
 
 import Foundation
 
+import Foundation
+
 struct RSSItem {
     var title: String
     var fullText: String
     var pubDate: String
     var img: String
+    var category: String
 
 }
 
@@ -35,6 +38,8 @@ class FeedParser: NSObject, XMLParserDelegate {
             currentPubDate = currentPubDate.trimmingCharacters(in: CharacterSet.newlines)
         }
     }
+    private var currentCategory = ""
+    
     private var parserCompletionHandler: (([RSSItem]) -> Void)?
     
     func parseFeed (url: String, completionHandler: (([RSSItem]) -> Void)?) {
@@ -85,12 +90,12 @@ class FeedParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
-            let rssItem = RSSItem(title: currentTitle, fullText: currentFullText, pubDate: currentPubDate, img: currentImg)
+            let rssItem = RSSItem(title: currentTitle, fullText: currentFullText, pubDate: currentPubDate, img: currentImg, category: currentCategory)
             self.rssItems.append(rssItem)
         }
     }
     
-    //когда все статьи подгрузятся
+    // when articles are loaded
     func parserDidEndDocument(_ parser: XMLParser) {
         parserCompletionHandler?(rssItems)
     }
@@ -100,4 +105,3 @@ class FeedParser: NSObject, XMLParserDelegate {
         print(parseError.localizedDescription)
     }
 }
-

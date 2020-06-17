@@ -11,12 +11,12 @@ import UIKit
 class NewsTableViewController: UITableViewController {
     
     private var rssItems: [RSSItem]?
-
-
+    private var filteredItems = [RSSItem]()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBAction func pageRefreshControl(_ sender: UIRefreshControl) {
         fetchData()
-        refreshControl?.endRefreshing()
-        self.tableView.reloadData()
     }
     
     
@@ -25,9 +25,8 @@ class NewsTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableView.automaticDimension
-//        self.tableView.dataSource = self
-//        self.tableView.delegate = self
         fetchData()
+        searchBar.placeholder = "Поиск по категориям:"
     }
     
     func fetchData() {
@@ -37,6 +36,7 @@ class NewsTableViewController: UITableViewController {
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
             }
         }
     }
@@ -44,35 +44,32 @@ class NewsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // Return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let rssItems = rssItems else {
-            return 0
-        }
-        return rssItems.count
+        return rssItems?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NewsTableViewCell
-        if let item = rssItems?[indexPath.item] {
-            cell.item = item
-            cell.selectionStyle = .none
-        }
+        cell.selectionStyle = .none
+        cell.dateLabel.text = rssItems?[indexPath.item].pubDate
+        cell.titleLabel.text = rssItems?[indexPath.item].title
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToArticle", sender: self )
     }
-        
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {
-            (segue.destination as? ArticleViewController)?.article = rssItems![indexPath.row]
-            tableView.deselectRow(at: indexPath, animated: true)
+            (segue.destination as? ArticleViewController)?.article = rssItems?[indexPath.row]
         }
     }
 }
+
+
 

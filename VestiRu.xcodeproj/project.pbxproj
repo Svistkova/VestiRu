@@ -14,7 +14,7 @@
 		799A4C182491317E00CBAFF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799A4C172491317E00CBAFF8 /* Assets.xcassets */; };
 		799A4C1B2491317E00CBAFF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 799A4C192491317E00CBAFF8 /* LaunchScreen.storyboard */; };
 		799A4C23249132DB00CBAFF8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A4C22249132DB00CBAFF8 /* NewsTableViewCell.swift */; };
-		799A4C25249132F600CBAFF8 /* XLMParcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A4C24249132F600CBAFF8 /* XLMParcer.swift */; };
+		799A4C25249132F600CBAFF8 /* XMLParcer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A4C24249132F600CBAFF8 /* XMLParcer.swift */; };
 		799A4C2724913A0300CBAFF8 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799A4C2624913A0300CBAFF8 /* ArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +28,7 @@
 		799A4C1A2491317E00CBAFF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		799A4C1C2491317E00CBAFF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		799A4C22249132DB00CBAFF8 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-		799A4C24249132F600CBAFF8 /* XLMParcer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLMParcer.swift; sourceTree = "<group>"; };
+		799A4C24249132F600CBAFF8 /* XMLParcer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParcer.swift; sourceTree = "<group>"; };
 		799A4C2624913A0300CBAFF8 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 		799A4C5D249812EC00CBAFF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				799A4C24249132F600CBAFF8 /* XLMParcer.swift */,
+				799A4C24249132F600CBAFF8 /* XMLParcer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 			files = (
 				799A4C132491317B00CBAFF8 /* NewsTableViewController.swift in Sources */,
 				799A4C2724913A0300CBAFF8 /* ArticleViewController.swift in Sources */,
-				799A4C25249132F600CBAFF8 /* XLMParcer.swift in Sources */,
+				799A4C25249132F600CBAFF8 /* XMLParcer.swift in Sources */,
 				799A4C0F2491317B00CBAFF8 /* AppDelegate.swift in Sources */,
 				799A4C23249132DB00CBAFF8 /* NewsTableViewCell.swift in Sources */,
 				799A4C112491317B00CBAFF8 /* SceneDelegate.swift in Sources */,
@@ -328,9 +328,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88V5XWL377;
 				INFOPLIST_FILE = VestiRu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_MAP_FILE_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,9 +349,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88V5XWL377;
 				INFOPLIST_FILE = VestiRu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_MAP_FILE_PATH = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
