@@ -8,8 +8,6 @@
 
 import Foundation
 
-import Foundation
-
 struct RSSItem {
     var title: String
     var fullText: String
